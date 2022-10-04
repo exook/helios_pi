@@ -31,7 +31,7 @@ Examples:
 
 '''
 import sys
-import i2c
+import i2c_module
 
 __all__ = [
     "ADC",
@@ -56,7 +56,7 @@ class ADC(object):
     '''
     def __init__(self, address = 0x08):
         self.address = address
-        self.bus = i2c.Bus()
+        self.bus = i2c_module.Bus()
 
     def read_raw(self, channel):
         '''
