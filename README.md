@@ -99,9 +99,9 @@ When reading these isntructions, the bullet points mark different steps, and the
 * Start the notebook without a browser, and with as pecific port
   * `jupyter notebook --no-browser --port=8888`
 * Copy the "localhost" URL and token given. Example below, but your token will be different:
-  * `http://localhost:8880/?token=6d587c101ecd1c75ffa640675a6aaae9179c5118db79f4e4`
+  * `http://localhost:8080/?token=6d587c101ecd1c75ffa640675a6aaae9179c5118db79f4e4`
 * Open a new terminal on your **PC** and run the following command:
-  *  `ssh -L 8888:localhost:8888 pi@[raspberrypi_name]`
+  *  `ssh -L 80880:localhost:8080 pi@[raspberrypi_name]`
 * Open the browser on your **PC** and enter URL that you copied earlier
 * The Jupyter notebook now runs on your RAspberry Pi, but you can itneract with it in your browser, which is faster than VNC
 
