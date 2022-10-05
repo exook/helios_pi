@@ -64,6 +64,10 @@ When reading these isntructions, the bullet points mark different steps, and the
   * `pip install -U numpy`
   * `pip install notebook`
   * `pip install jupyterplot`
+* Get the wired IP address of the Raspberry Pi
+  *  `ifconfig`
+  *  Under "eth0" it lists something like "inet 10.42.0.248"
+  *  When connecting to the Pi later, this can be useful in addition to the "[raspberrypi_name].local"
 * Execute this command to reboot
   * `sudo reboot`
 
