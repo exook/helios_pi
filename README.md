@@ -53,11 +53,6 @@ When reading these isntructions, the bullet points mark different steps, and the
 
 ## Setting up Raspberry Pi via SSH
 * When connected via SSH do set up the WiFi connection.
-  * `sudo raspi-config`
-  * Navigate to "System Options", then "Wireless LAN"
-    * For "SSID" enter the name of the netwokr, press enter
-    * Fpr passphrase, enter the passwrod for the network. Press neter
-    * Vack at the main menue, use thre right arrow key twice to mark "Finish", then press enter
 * Execute the following commands to setup the different interfaces of the reaspbery pi
   * `sudo raspi-config nonint do_vnc 0`
   * `sudo raspi-config nonint do_i2c 0`
@@ -104,3 +99,10 @@ When reading these isntructions, the bullet points mark different steps, and the
   *  `ssh -L 8888:localhost:8888 pi@[raspberrypi_name]`
 * Open the browser on your **PC** and enter URL that you copied earlier
 * The Jupyter notebook now runs on your RAspberry Pi, but you can itneract with it in your browser, which is faster than VNC
+
+## If you need to re-configure WiFi from terminal
+  * `sudo raspi-config`
+  * Navigate to "System Options", then "Wireless LAN"
+    * For "SSID" enter the name of the netwokr, press enter
+    * Fpr passphrase, enter the passwrod for the network. Press neter
+    * Back at the main menue, use thre right arrow key twice to mark "Finish", then press enter
