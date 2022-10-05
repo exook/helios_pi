@@ -17,9 +17,18 @@ When reading these isntructions, the bullet points mark different steps, and the
 * Check the box "Set username and password"
   * Set username "pi"
   * Set your own, secret, password
+* Check the box "Configure wireless LAN"
+  * At "SSID" enter the WiFi name
+  * At "Password" enter the WiFi password
+  * At "Wireless LAN country" select SE
+* Check "Set locate settings"
+  * Leave "Time zone" as "Europe/Stockholm"
+  * Select "Keyobard layout" as your keyboard layout, probably "se"
+*  Un-check the box "Enable telemetry"
 * Click "Save"
 * At the main window, click "Write"
-  * Be patient and wait for the writing to finish
+* Click "Yes" when prompted taht all existing data will be erased
+  * Be patient and wait for the writing and validation to finish
 
 ## First Boot
 * Insert the SD card into the SD card slot on the Raspberry Pi
