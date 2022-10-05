@@ -45,8 +45,10 @@ Follow these instructions to get started with the HELIOS Raspberry Pi Course
     * `ssh pi@[raspberrypi_name].local`
   * On Windows machine install putty: https://www.putty.org/
 * When connected via shh do:
-  * `raspi-config`
-  * Enable the "VNC Client" and quit the application
+  * `sudo raspi-config nonint do_vnc 0`
+  * `sudo raspi-config nonint do_i2c 0`
+  * `sudo raspi-config nonint do_spi 0`
+  * `sudo raspi-config nonint do_rgpio 0`
   * `sudo reboot --force`
 * The Raspberry Pi will be up and running in ~ 1 min
 
