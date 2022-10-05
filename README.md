@@ -13,6 +13,7 @@ When reading these isntructions, the bullet points mark different steps, and the
 * Check the box "Set hostname"
   * Set the host name to "Raspberrypi1" or "Raspberrypi2", follwoing the number given on your package
 * Check the box "Enable SSH"
+  * Mage sure that "Use password authentication" is selected
 * Check the box "Set username and password"
   * Set username "pi"
   * Set your own, secret, password
