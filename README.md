@@ -24,7 +24,7 @@ Follow these instructions to get started with the HELIOS Raspberry Pi Course
 * Connect the Raspberry Pi to power
 * Wait 2-3 minutes for the Raspberry Pi to power up, wait until the green LED stops blinking
 
-## Connecting via SHH first
+## Connecting via SSH
 ### Linux (UBUNTU)
 * Go to network settings
 * Under "Wired" make sure that the toggle switch ofr "Connected" is truned on
@@ -37,7 +37,7 @@ Follow these instructions to get started with the HELIOS Raspberry Pi Course
 ### MAC
 ### Windows
 
-# Setting up Raspberry Pi via SSH
+## Setting up Raspberry Pi via SSH
 * When connected via SSH do set up the WiFi connection.
   * `sudo raspi-config`
   * Navigate to "System Options", then "Wireless LAN"
@@ -57,12 +57,36 @@ Follow these instructions to get started with the HELIOS Raspberry Pi Course
 * Execute this command to reboot
   * `sudo reboot`
 
-## Connecting via VNC
+## Connecting via VNC (Full graphical desktop environment of the Raspberry Pi)
 * Install a VNC client on your computer: https://www.realvnc.com/en/connect/download/viewer/
 * Open Real VNC on your computer
   * The address of the raspberry pi is: [raspberrypi_name].local
-* Set up 
-* Update
-* Gett all python packages
-* Clone HELIOS repository
-* Start notebook
+* In the top left, use the black suqare icon to open a terminal window
+
+## Starting the Jupyter notebook
+* Open a terminal
+* Navigate to the Desktop
+  * `cd Desktop`
+* Clone the code respository:
+  *  `git clone https://github.com/exook/helios_pi.git`
+*  Enter the new directory
+  *  `cd helios_pi/`
+* Start the notebook:
+  * `jupyter notebook`
+* In the browser window, open "helios_pi.ipynb"
+* You are ready to go!
+
+## Running the Jupyter notebook without VNC (Less laggy)
+* If you think the VNC is a bit slow or laggy you can try this method
+* Connect to your raspberry Pi via SSH
+  * `ssh pi@[raspberrypi_name].local`
+* Navigate to the correct directory
+  * `cd Desktop/helios_pi/`
+* Start the notebook without a browser, and with as pecific port
+  * `jupyter notebook --no-browser --port=8888`
+* Copy the "localhost" URL and token given. Example below, but your token will be different:
+  * `http://localhost:8880/?token=6d587c101ecd1c75ffa640675a6aaae9179c5118db79f4e4`
+* Open a new terminal on your **PC** and run the following command:
+  *  `ssh -L 8888:localhost:8888 pi@[raspberrypi_name]`
+* Open the browser on your **PC** and enter URL that you copied earlier
+* The Jupyter notebook now runs on your RAspberry Pi, but you can itneract with it in your browser, which is faster than VNC
