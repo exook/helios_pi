@@ -64,6 +64,7 @@ When reading these isntructions, the bullet points mark different steps, and the
   * `pip install -U numpy`
   * `pip install notebook`
   * `pip install jupyterplot`
+  * `pip install smbus2`
 * Get the wired IP address of the Raspberry Pi
   *  `ifconfig`
   *  Under "eth0" it lists something like "inet 10.42.0.248"
