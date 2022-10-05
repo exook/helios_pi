@@ -61,6 +61,7 @@ When reading these isntructions, the bullet points mark different steps, and the
 * Execute these commands to update and isntall necessary software to the pi
   * `sudo apt update`
   * `sudo apt full-upgrade`
+  * `pip install -U numpy`
   * `pip install notebook`
   * `pip install jupyterplot`
 * Execute this command to reboot
