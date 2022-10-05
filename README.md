@@ -28,7 +28,7 @@ When reading these isntructions, the bullet points mark different steps, and the
 * Click "Save"
 * At the main window, click "Write"
 * Click "Yes" when prompted taht all existing data will be erased
-  * Be patient and wait for the writing and validation to finish
+  * Be patient and wait for the writing and verification to finish
 
 ## First Boot
 * Insert the SD card into the SD card slot on the Raspberry Pi
