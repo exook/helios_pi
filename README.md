@@ -77,7 +77,7 @@ When reading these isntructions, the bullet points mark different steps, and the
   * The address of the raspberry pi is: [raspberrypi_name].local
 * In the top left, use the black suqare icon to open a terminal window
 
-## Starting the Jupyter notebook
+## Starting the Jupyter notebook with VNC
 * Open a terminal
 * Navigate to the Desktop
   * `cd Desktop`
@@ -97,13 +97,14 @@ When reading these isntructions, the bullet points mark different steps, and the
 * Navigate to the correct directory
   * `cd Desktop/helios_pi/`
 * Start the notebook without a browser, and with as pecific port
-  * `jupyter notebook --no-browser --port=8888`
+  * `jupyter notebook --no-browser --port=8080`
 * Copy the "localhost" URL and token given. Example below, but your token will be different:
   * `http://localhost:8080/?token=6d587c101ecd1c75ffa640675a6aaae9179c5118db79f4e4`
 * Open a new terminal on your **PC** and run the following command:
   *  `ssh -L 80880:localhost:8080 pi@[raspberrypi_name]`
 * Open the browser on your **PC** and enter URL that you copied earlier
 * The Jupyter notebook now runs on your RAspberry Pi, but you can itneract with it in your browser, which is faster than VNC
+* Not that if you do this in the future, pick a port number that is not standard or often listed on the internet as this can make the Raspberry Pi vulnerable to attacks
 
 ## If you need to re-configure WiFi from terminal
   * `sudo raspi-config`
