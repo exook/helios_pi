@@ -46,6 +46,7 @@ When reading these isntructions, the bullet points mark different steps, and the
 * Click Apply
 * Connect to the Raspberry Pi with ssh
   * `ssh pi@[raspberrypi_name].local`
+* If you have trouble conneting, try powering off and on the Raspberry Pi
 
 ### MAC
 ### Windows
