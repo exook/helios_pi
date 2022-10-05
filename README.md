@@ -71,13 +71,13 @@ When reading these isntructions, the bullet points mark different steps, and the
 * Execute this command to reboot
   * `sudo reboot`
 
-## Connecting via VNC (Full graphical desktop environment of the Raspberry Pi)
+## Optional: Connecting via VNC (Full graphical desktop environment of the Raspberry Pi)
 * Install a VNC client on your computer: https://www.realvnc.com/en/connect/download/viewer/
 * Open Real VNC on your computer
   * The address of the raspberry pi is: [raspberrypi_name].local
 * In the top left, use the black suqare icon to open a terminal window
 
-## Starting the Jupyter notebook with VNC
+## Optional: Starting the Jupyter notebook with VNC
 * Open a terminal
 * Navigate to the Desktop
   * `cd Desktop`
