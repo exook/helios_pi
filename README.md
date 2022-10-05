@@ -100,11 +100,13 @@ When reading these isntructions, the bullet points mark different steps, and the
   * `jupyter notebook --no-browser --port=8080`
 * Copy the "localhost" URL and token given. Example below, but your token will be different:
   * `http://localhost:8080/?token=6d587c101ecd1c75ffa640675a6aaae9179c5118db79f4e4`
-* Open a new terminal on your **PC** and run the following command:
-  *  `ssh -L 80880:localhost:8080 pi@[raspberrypi_name]`
-* Open the browser on your **PC** and enter URL that you copied earlier
-* The Jupyter notebook now runs on your RAspberry Pi, but you can itneract with it in your browser, which is faster than VNC
-* Not that if you do this in the future, pick a port number that is not standard or often listed on the internet as this can make the Raspberry Pi vulnerable to attacks
+  * Enter it into the browser on your **PC**. The page will fail to load, which is okay
+* Open a new terminal on your **PC** and run the following command to chatch the Jupyter notebook server on the Raspberry Pi:
+  *  `ssh -L 8080:localhost:8080 pi@[raspberrypi_name].local`
+* Open the browser on your **PC** again, and reaload the page that failed earlier.
+* You should now see a jupyter notebook environment in the browser on your **PC**
+  * The Jupyter notebook now runs on your Raspberry Pi, but you can interact with it in your **PC** browser, which is faster than VNC
+* Note that if you do this in the future, pick a port number that is not standard and not often listed on the internet as this can make the Raspberry Pi vulnerable to attacks
 
 ## If you need to re-configure WiFi from terminal
   * `sudo raspi-config`
