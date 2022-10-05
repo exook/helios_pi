@@ -1,5 +1,7 @@
 # HELIOS Raspberry Pi Course
-Follow these instructions to get started with the HELIOS Raspberry Pi Course
+These are the instructions to get started with the HELIOS Raspberry Pi Course. It will take you from a blank Raspberry Pi to running a Jupyter notebook on the Raspberry Pi which controls different electrical components.
+
+When reading these isntructions, the bullet points mark different steps, and the grey "code boxes" mark code to be executed. It is often very handy to triple-click these grey boxes to mark all its content, and then use ctrl+C and ctrl+V (ctrl+shift+V on Ubuntu) to paste this in the rapsberry Pi terminal.
 
 ## Install the operating system
 * Download the Raspberry Pi imager to your computer: https://www.raspberrypi.com/software/
