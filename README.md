@@ -4,23 +4,23 @@ Course. It will take you from a blank Raspberry Pi to running a
 Jupyter notebook on the Raspberry Pi which controls different
 electrical components.
 
-When reading these isntructions, the bullet points mark different
+When reading these instructions, the bullet points mark different
 steps, and the grey "code boxes" mark code to be executed. It is often
 very handy to triple-click these grey boxes to mark all its content,
 and then use ctrl+C and ctrl+V (ctrl+shift+V on Ubuntu) to paste this
-in the rapsberry Pi terminal.
+in the terminal.
 
 ## Install the operating system
 * Download the Raspberry Pi imager to your computer:
   https://www.raspberrypi.com/software/
+* If you prefer to do it from the terminal, you can do:  
   * `curl -O https://downloads.raspberrypi.org/imager/imager_latest_amd64.deb && sudo apt install imager_latest_amd64.deb # <-- for Ubuntu x86_64`
   * `git clone https://aur.archlinux.org/rpi-imager.git && cd rpi-imager && makepkg -sf && sudo pacman -U rpi-imager-*-x86_64.pkg.* # <-- for ArchLinux`
 * Insert the Micro SD card into a card reader
-  * inspecting the ouput from `dmesg` soon after insertion will give
+  * Optional: inspecting the ouput from `dmesg` soon after insertion will give
     you a clue as to the location (`/dev/<something>`) of the card in
     the system
-* Start the imager
-  * `rpi-imager`
+* Start the imager either via desktop or terminal via `rpi-imager`
 * For "CHOOSE OS" select **Raspberry Pi OS (32-bit)** as operating system
 * For "CHOOSE STORAGE" select your Micro SD card as the choosen
   storage (*Make sure to select the correct one. not doing so may have
@@ -71,8 +71,7 @@ in the rapsberry Pi terminal.
 <TODO>
 
 ## Setting up Raspberry Pi via SSH
-* When connected via SSH do set up the WiFi connection.
-* Execute the following commands to setup the different interfaces of the Raspberry Pi
+* When connected via SSH Execute the following commands to setup the different interfaces of the Raspberry Pi
   * `sudo raspi-config nonint do_vnc 0`
   * `sudo raspi-config nonint do_i2c 0`
   * `sudo raspi-config nonint do_spi 0`
@@ -88,18 +87,50 @@ in the rapsberry Pi terminal.
   *  `ifconfig`
   *  Under `eth0` it should show like `inet 10.42.0.248`
   *  When connecting to the Pi later, this can be useful in addition to the name "[raspberrypi_name].local"
+* Navigate to the Desktop
+  * `cd Desktop`
+* Clone the code respository:
+  *  `git clone https://github.com/exook/helios_pi.git`
 * Execute this command to reboot
   * `sudo reboot`
 
-## Optional: Connecting via VNC (Real VNC) (Full graphical desktop environment of the Raspberry Pi)
-* **This is only needed if you want to connect to the Jupyter notebook
-  from a browser window running directly on the Raspberry Pi. See Bellow**
+## Two choices for working with your Rapsberry Pi
+### Full graphical desktop environment: Connecting via Real VNC
+* **This is only needed if you are not comfortable with the terminal environment**
 * Install a VNC client on your computer: https://www.realvnc.com/en/connect/download/viewer/
 * Open Real VNC on your computer
   * The address of the raspberry pi is: [raspberrypi_name].local
 * In the top left, use the black suqare icon to open a terminal window
 
-## Optional: Connecting securely to VNC using SSH tunnel (X11VNC and vncviewer [tigervnc])
+### Running the Jupyter notebook without VNC (Indirect but less laggy)
+* If you think the VNC is a bit slow or laggy you can try this method
+* Connect to your Raspberry Pi via SSH
+  * `ssh pi@[raspberrypi_name].local`
+* Navigate to the correct directory
+  * `cd Desktop/helios_pi/`
+* Start the notebook without a browser, and with a specific port
+  * `jupyter notebook --no-browser --port=8080`
+* Copy the "localhost" URL and token given at output in the
+  terminal. It normally looks something like this:
+  * `http://localhost:8080/?token=6d587c101ecd1c75ffa640675a6aaae9179c5118db79f4e4` (your token will be different)
+  * Enter it into the browser on your **PC**. The page will fail to
+    load, which is okay
+* Open a new terminal on your **PC** and run the following command to
+  reach the Jupyter notebook server on the Raspberry Pi:
+  *  `ssh -L 8080:localhost:8080 pi@[raspberrypi_name].local`
+* Open the browser on your **PC** again, and reaload the page that
+  failed earlier.
+* You should now see a jupyter notebook environment in the browser on
+  your **PC**
+  * The Jupyter notebook now runs on your Raspberry Pi, but you can
+    interact with it in your **PC** browser, which is faster than VNC
+* Note that if you do this in the future, pick a port number that is
+  not standard and not often listed on the internet as this can make
+  the Raspberry Pi vulnerable to attacks
+
+## MISC
+
+#### Optional: Connecting securely to VNC using SSH tunnel (X11VNC and vncviewer [tigervnc])
 * **This is only needed if you want to connect to the Jupyter notebook
   from a browser window running directly on the Raspberry Pi. See Bellow**
 * Install and setup `X11VNC` on the Raspberry Pi
@@ -130,7 +161,7 @@ in the rapsberry Pi terminal.
   * `vncviewer -PreferredEncoding=ZRLE localhost:0`
   * You might want to try different encodings: `copyrect tight zrle hextile zlib corre rre raw`
 
-## Optional: Starting the Jupyter notebook with VNC (Direct but potentially laggy)
+##### Optional: Graphical Desktop environment using VNC (Direct but potentially laggy)
 * This is a conceptually more direct way to run the Jupyter notebook
   but it is not the preferred way as the overhead of running a
   graphical desktop, plus browser, on the raspberry is not small.
@@ -145,32 +176,6 @@ in the rapsberry Pi terminal.
   * `jupyter notebook`
 * In the browser window, open `helios_pi.ipynb`
 * You are ready to go!
-
-## Running the Jupyter notebook without VNC (Indirect but less laggy)
-* If you think the VNC is a bit slow or laggy you can try this method
-* Connect to your Raspberry Pi via SSH
-  * `ssh pi@[raspberrypi_name].local`
-* Navigate to the correct directory
-  * `cd Desktop/helios_pi/`
-* Start the notebook without a browser, and with a specific port
-  * `jupyter notebook --no-browser --port=8080`
-* Copy the "localhost" URL and token given at output in the
-  terminal. It normally looks something like this:
-  * `http://localhost:8080/?token=6d587c101ecd1c75ffa640675a6aaae9179c5118db79f4e4` (your token will be different)
-  * Enter it into the browser on your **PC**. The page will fail to
-    load, which is okay
-* Open a new terminal on your **PC** and run the following command to
-  reach the Jupyter notebook server on the Raspberry Pi:
-  *  `ssh -L 8080:localhost:8080 pi@[raspberrypi_name].local`
-* Open the browser on your **PC** again, and reaload the page that
-  failed earlier.
-* You should now see a jupyter notebook environment in the browser on
-  your **PC**
-  * The Jupyter notebook now runs on your Raspberry Pi, but you can
-    interact with it in your **PC** browser, which is faster than VNC
-* Note that if you do this in the future, pick a port number that is
-  not standard and not often listed on the internet as this can make
-  the Raspberry Pi vulnerable to attacks
 
 ## If you need to re-configure WiFi from terminal
   * `sudo raspi-config`
