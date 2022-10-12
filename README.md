@@ -80,6 +80,7 @@ in the terminal.
 * A terminal opens and shows "login as:" type `pi`
 * The terminal then prompts you for the password that you have set
 * Done! You are inside the Raspbperry Pi Terminal
+* **IMPORTANT!** To paste commands from your PC into the PuTTY terminal, use the right click or shift+insert
 
 ## Setting up Raspberry Pi via SSH
 * When connected via SSH Execute the following commands to setup the different interfaces of the Raspberry Pi
