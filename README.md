@@ -65,10 +65,21 @@ in the terminal.
 * If you have trouble conneting, try powering cycling the Raspberry Pi ,i.e., _Turn it on and off again_ ;-)
 
 ### MAC
-<TODO>
+* Open a terminal
+* Connect to the Raspberry Pi with SSH
+  * `ssh pi@[raspberrypi_name].local`
 
 ### Windows
-<TODO>
+* Open the Microsfot store and search for "PuTTY"
+* Install PuTTY
+* Open the PuTTY App
+* Enter your [raspberrypi_name] in the field for "Host Name (or IP address)"
+  * For example "Raspberrypi2"
+* Click "Open"
+  * You might get a "PuTTY Security Alert" saying that "The host key is not cached for this server...", just click "accept"
+* A terminal opens and shows "login as:" type `pi`
+* The terminal then prompts you for the password that you have set
+* Done! You are inside the Raspbperry Pi Terminal
 
 ## Setting up Raspberry Pi via SSH
 * When connected via SSH Execute the following commands to setup the different interfaces of the Raspberry Pi
