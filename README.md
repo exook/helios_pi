@@ -114,7 +114,8 @@ in the terminal.
   * The address of the raspberry pi is: [raspberrypi_name].local
 * In the top left, use the black suqare icon to open a terminal window
 
-### Running the Jupyter notebook without VNC (Indirect but less laggy)
+### (Recommended) Running the Jupyter notebook without VNC (Indirect but less laggy)
+#### Linux/MAC
 * If you think the VNC is a bit slow or laggy you can try this method
 * Connect to your Raspberry Pi via SSH
   * `ssh pi@[raspberrypi_name].local`
@@ -132,6 +133,27 @@ in the terminal.
   *  `ssh -L 8080:localhost:8080 pi@[raspberrypi_name].local`
 * Open the browser on your **PC** again, and reaload the page that
   failed earlier.
+* You should now see a jupyter notebook environment in the browser on
+  your **PC**
+  * The Jupyter notebook now runs on your Raspberry Pi, but you can
+    interact with it in your **PC** browser, which is faster than VNC
+* Note that if you do this in the future, pick a port number that is
+  not standard and not often listed on the internet as this can make
+  the Raspberry Pi vulnerable to attacks
+#### Windows
+* Open PuTTY and enter the [raspberrypi_name]
+* Go to SSH on the bottom of the left pane to expand the menu and then click on Tunnels
+* For "Source port", enter the port number which you want to use to access Jupyte. I picked 8080
+* Det the destination as "localhost:8080"
+* Click the Add button, and the ports should appear in the Forwarded ports list
+* Click the Open button to connect to the server via SSH and tunnel to the desired port
+* Log in to the Raspberry Pi as usual
+* In the terminal run
+  * `jupyter notebook --no-browser --port=8080`
+* Copy the "localhost" URL and token given at output in the
+  terminal. It normally looks something like this:
+  * `http://localhost:8080/?token=6d587c101ecd1c75ffa640675a6aaae9179c5118db79f4e4` (your token will be different)
+  * Enter it into the browser on your **PC**.
 * You should now see a jupyter notebook environment in the browser on
   your **PC**
   * The Jupyter notebook now runs on your Raspberry Pi, but you can
