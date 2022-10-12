@@ -117,8 +117,9 @@ in the terminal.
 ### (Recommended) Running the Jupyter notebook without VNC (Indirect but less laggy)
 #### Linux/MAC
 * If you think the VNC is a bit slow or laggy you can try this method
-* Connect to your Raspberry Pi via SSH
-  * `ssh pi@[raspberrypi_name].local`
+* Open a new terminal on your **PC** and run the following command to
+  create an ssh tunnel to the port where you will host the Jupyter notebook server.
+  *  `ssh -L 8080:localhost:8080 pi@[raspberrypi_name].local`
 * Navigate to the correct directory
   * `cd Desktop/helios_pi/`
 * Start the notebook without a browser, and with a specific port
@@ -126,13 +127,6 @@ in the terminal.
 * Copy the "localhost" URL and token given at output in the
   terminal. It normally looks something like this:
   * `http://localhost:8080/?token=6d587c101ecd1c75ffa640675a6aaae9179c5118db79f4e4` (your token will be different)
-  * Enter it into the browser on your **PC**. The page will fail to
-    load, which is okay
-* Open a new terminal on your **PC** and run the following command to
-  reach the Jupyter notebook server on the Raspberry Pi:
-  *  `ssh -L 8080:localhost:8080 pi@[raspberrypi_name].local`
-* Open the browser on your **PC** again, and reaload the page that
-  failed earlier.
 * You should now see a jupyter notebook environment in the browser on
   your **PC**
   * The Jupyter notebook now runs on your Raspberry Pi, but you can
