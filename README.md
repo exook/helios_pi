@@ -212,3 +212,18 @@ in the terminal.
     * For passphrase, enter the password for the network. Press enter
     * Back at the main menue, use the right arrow key twice to mark
       "Finish", then press enter
+      
+## If you run into problems with numpy on your Raspberry Pi (for example with the jupyterplot package)
+  Part of this information can be found at:
+  https://numpy.org/devdocs/user/troubleshooting-importerror.html
+  * Open up the terminal on your pi and enter
+  * 'sudo pip install -U numpy'
+  * 'sudo apt-get install libatlas-base-dev'
+  These steps are meant to fix a broken numpy installation on your Raspberry. 
+  * Restart the kernel in your jupyter notebook, or restart the application
+  *Alternatively:*
+  * Open up the terminal on your pi and enter
+  * 'sudo pip3 uninstall numpy'  # remove previously installed version
+  * 'sudo apt install python3-numpy'
+  This way could also work.
+    
