@@ -114,6 +114,7 @@ in the terminal.
 * Open Real VNC on your computer
   * The address of the raspberry pi is: [raspberrypi_name].local
 * In the top left, use the black suqare icon to open a terminal window
+* **If you are experiencing a very slow Chromium browser on your pi, try diabling hardware acceleration in the browser settings.**
 
 ### (Recommended) Running the Jupyter notebook without VNC (Indirect but less laggy)
 #### Linux/MAC
