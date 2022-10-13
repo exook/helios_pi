@@ -91,6 +91,7 @@ in the terminal.
 * Execute these commands to update and install necessary software to the Pi
   * `sudo apt update`
   * `sudo apt full-upgrade`
+  * `sudo apt-get install libatlas-base-dev`
   * `pip install -U numpy`
   * `pip install notebook`
   * `pip install jupyterplot`
