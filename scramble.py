@@ -12,7 +12,7 @@ def scramble(input_string, key, extra):
         new_character = chr(ord(character)+key_sum)
         scrambled_character_list.append(chr(ord(character)+key_sum))
     scramble_string = "".join(scrambled_character_list)
-    print(f'{extra} = "{scramble_string}"')
+    print(f'{extra} = "{scramble_string}"\n')
 
 def unscramble(input_string, key):
     key_sum=0
